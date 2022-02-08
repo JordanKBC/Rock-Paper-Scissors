@@ -1,0 +1,17 @@
+
+
+h1,h2 {
+    text-align: center;
+}
+
+.container {
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 400px;
+}
+
+button {
+    padding:50px;
+    font-size: larger;
+}
