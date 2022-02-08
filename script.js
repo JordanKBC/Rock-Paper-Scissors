@@ -10,18 +10,31 @@ function computerPlay() {
 
 //This function decides if the computer or the player wins
 function playRound(playerSelection,computerSelection) {
-    if (playerSelection == computerSelection) {
-        return "It is a Draw"
+    if (computerScore == 5) {
+        computerScore = 0;
+        playerScore = 0;
+        return "Computer Wins. The game will restart";
     }
-    else if (playerSelection == "Rock" && computerSelection == "Scissors" ||playerSelection == "Scissors" && computerSelection == "Paper"
-            ||playerSelection == "Paper" && computerSelection == "Rock" ) {
-        playerScore += 1;
-        return `Player Wins. ${playerSelection} beats ${computerSelection}`
+    else if (playerScore == 5) {
+        computerScore = 0;
+        playerScore = 0;
+        return "Player Wins. The game will restart";
     }
     else {
-        computerScore += 1;
-        return `Computer Wins. ${computerSelection} beats ${playerSelection}`
+        if (playerSelection == computerSelection) {
+            return "It is a Draw"
+        }
+        else if (playerSelection == "Rock" && computerSelection == "Scissors" ||playerSelection == "Scissors" && computerSelection == "Paper"
+                ||playerSelection == "Paper" && computerSelection == "Rock" ) {
+            playerScore += 1;
+            return `Player Wins. ${playerSelection} beats ${computerSelection}`
+        }
+        else {
+            computerScore += 1;
+            return `Computer Wins. ${computerSelection} beats ${playerSelection}`
+        }
     }
+
 }
 
 //Create a div to display the result of the current round
