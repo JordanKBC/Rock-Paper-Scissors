@@ -1,5 +1,5 @@
 
-
+// This function takes the user input and returns it as a capitalised string
 function playerPlay() {
     rawChoice = prompt("What is your choice?")
     rawChoiceFirstChar = (rawChoice.split(""))[0];
@@ -10,12 +10,14 @@ function playerPlay() {
     return formattedChoice;
 }
 
+//This function gives the computer's input through randomisation
 function computerPlay() {
     let choices = ["Rock", "Paper", "Scissors"];
     let index = Math.floor(Math.random()*3);
     return choices[index];
 }
 
+//This function decides if the computer or the player wins
 function playRound(playerSelection,computerSelection) {
     if (playerSelection == computerSelection) {
         return "It is a Draw"
@@ -28,7 +30,7 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-
+//This function plays a certain number of rounds of the game
 function game() {
     for (let i=0; i < 4; i++) {
         let playerChoice = playerPlay();
